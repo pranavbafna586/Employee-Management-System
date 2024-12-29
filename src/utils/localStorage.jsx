@@ -1,0 +1,230 @@
+const employees = [
+  {
+    id: 1,
+    firstName: "Aarav",
+    email: "employee1@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Code Review",
+        description: "Complete the project documentation.",
+        date: "2024-01-02",
+        category: "Documentation",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Testing",
+        description: "Review the design mockups.",
+        date: "2024-01-05",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Presentation",
+        description: "Prepare slides for the team meeting.",
+        date: "2024-01-10",
+        category: "Presentation",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+    taskCounts: {
+      active: 2,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 2,
+    firstName: "Ishaan",
+    email: "employee2@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Code Review",
+        description: "Optimize the database queries.",
+        date: "2024-01-03",
+        category: "Development",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Testing",
+        description: "Fix bugs in the user login system.",
+        date: "2024-01-08",
+        category: "Bug Fix",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Presentation",
+        description: "Write unit tests for API endpoints.",
+        date: "2024-01-15",
+        category: "Testing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 3,
+    firstName: "Priya",
+    email: "employee3@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Code Review",
+        description: "Create a wireframe for the new app.",
+        date: "2024-01-01",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Testing",
+        description: "Organize the team outing.",
+        date: "2024-01-20",
+        category: "Team Activity",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+    taskCounts: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 4,
+    firstName: "Ayesha",
+    email: "employee4@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Code Review",
+        description: "Refactor the frontend codebase.",
+        date: "2024-01-04",
+        category: "Development",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Testing",
+        description: "Update the company blog.",
+        date: "2024-01-09",
+        category: "Content",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Presentation",
+        description: "Plan the sprint retrospective.",
+        date: "2024-01-12",
+        category: "Management",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 5,
+    firstName: "Ravi",
+    email: "employee5@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Code Review",
+        description: "Analyze customer feedback.",
+        date: "2024-01-07",
+        category: "Analysis",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Testing",
+        description: "Prepare for the quarterly report.",
+        date: "2024-01-10",
+        category: "Finance",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Presentation",
+        description: "Update the team schedule.",
+        date: "2024-01-14",
+        category: "Planning",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+    taskCounts: {
+      active: 2,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+  },
+];
+
+const admin = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+export const getLocalStorage = () => {
+  const employee = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  return { employees, admin };
+};
